@@ -57,6 +57,8 @@
                 },
                 cors: true ,
                 secure: true,
+                CrossDomain:true,
+    async: false,
           headers: {
             'Access-Control-Allow-Origin': '*',
           },
