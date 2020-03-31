@@ -44,7 +44,7 @@
             const policyNumber = $('#policy_number').val();
             const premium = $('#premium').val();
             $.ajax({
-                headers: { "Access-Control-Allow-Origin": "*" }
+                headers: { "Access-Control-Allow-Origin": "*" },
                 type: 'post',
                 beforeSend: function() {
                     $('.loader').css("display","block");
