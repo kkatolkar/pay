@@ -20,6 +20,15 @@ Route::get('/home', function () {
 Route::get('home', function () {
     return view('home')->name('home');
 });
+Route::get('/thankyou', function () {
+    return view('thankyou');
+});
+Route::get('/paymentpending', function () {
+    return view('paymentpending');
+});
+Route::get('/paymentdeclined', function () {
+    return view('paymentdeclined');
+});
 
 //activateTsosologo//
 Route::get('/activate','ActivatetsosologoController@index')->name('activate');
