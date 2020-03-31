@@ -11,7 +11,7 @@
 <section id="content">
     <div class="card divcenter noradius noborder" style="max-width: 500px;">
         <div class="card-body" style="padding: 40px;">
-            <form id="redopayment" name="form" class="nobottommargin" action="#" method="post">
+            <form id="redopayment" name="form" class="nobottommargin" action="" method="post">
                 <h4>Pay for the Policy</h4>
                 <div class="form-group">
                     <input type="text" class="form-control" name="policy_number" id="policy_number" placeholder="Policy number" required aria-required="true">
@@ -34,27 +34,15 @@
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>
-<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
 <script>
     $(document).ready(function() {
+        
         $("#redopayment").validate({
-            rules: {
-                vehicleplate : {
-                    required: true,
-                },
-            },
-            messages : {
-                vehicleplate: {
-                    required: "Please enter policy number"
-                },
-            }
-        });
-
-        $('#submit').click(function (e) {
-            console.log('clicked');
+            submitHandler: function(form) {
             const policyNumber = $('#policy_number').val();
             const premium = $('#premium').val();
-            e.preventDefault();
             $.ajax({
 
                 type: 'post',
@@ -81,7 +69,10 @@
                 }
             });
 
-        });  
+            }
+
+        });
+ 
 
     });
 </script>
