@@ -4,7 +4,11 @@
 
 namespace Composer\Autoload;
 
+<<<<<<< HEAD
+class ComposerStaticInitdc5e52d0b044c809548ff78b51ec6eed
+=======
 class ComposerStaticInitbec35b7b914896d8841743bd15be72d7
+>>>>>>> ba1735ec43ec0b73b128c725ed9cbb92f8ec83d0
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -2867,6 +2871,7 @@ class ComposerStaticInitbec35b7b914896d8841743bd15be72d7
         'PHPUnit\\Util\\TestDox\\XmlResultPrinter' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TestDox/XmlResultPrinter.php',
         'PHPUnit\\Util\\TextTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/TextTestListRenderer.php',
         'PHPUnit\\Util\\Type' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Type.php',
+        'PHPUnit\\Util\\VersionComparisonOperator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/VersionComparisonOperator.php',
         'PHPUnit\\Util\\XdebugFilterScriptGenerator' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XdebugFilterScriptGenerator.php',
         'PHPUnit\\Util\\Xml' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/Xml.php',
         'PHPUnit\\Util\\XmlTestListRenderer' => __DIR__ . '/..' . '/phpunit/phpunit/src/Util/XmlTestListRenderer.php',
@@ -3772,6 +3777,7 @@ class ComposerStaticInitbec35b7b914896d8841743bd15be72d7
         'Symfony\\Component\\Console\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/symfony/console/Exception/InvalidArgumentException.php',
         'Symfony\\Component\\Console\\Exception\\InvalidOptionException' => __DIR__ . '/..' . '/symfony/console/Exception/InvalidOptionException.php',
         'Symfony\\Component\\Console\\Exception\\LogicException' => __DIR__ . '/..' . '/symfony/console/Exception/LogicException.php',
+        'Symfony\\Component\\Console\\Exception\\MissingInputException' => __DIR__ . '/..' . '/symfony/console/Exception/MissingInputException.php',
         'Symfony\\Component\\Console\\Exception\\NamespaceNotFoundException' => __DIR__ . '/..' . '/symfony/console/Exception/NamespaceNotFoundException.php',
         'Symfony\\Component\\Console\\Exception\\RuntimeException' => __DIR__ . '/..' . '/symfony/console/Exception/RuntimeException.php',
         'Symfony\\Component\\Console\\Formatter\\OutputFormatter' => __DIR__ . '/..' . '/symfony/console/Formatter/OutputFormatter.php',
@@ -4583,10 +4589,17 @@ class ComposerStaticInitbec35b7b914896d8841743bd15be72d7
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+<<<<<<< HEAD
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdc5e52d0b044c809548ff78b51ec6eed::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdc5e52d0b044c809548ff78b51ec6eed::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitdc5e52d0b044c809548ff78b51ec6eed::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitdc5e52d0b044c809548ff78b51ec6eed::$classMap;
+=======
             $loader->prefixLengthsPsr4 = ComposerStaticInitbec35b7b914896d8841743bd15be72d7::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitbec35b7b914896d8841743bd15be72d7::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitbec35b7b914896d8841743bd15be72d7::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitbec35b7b914896d8841743bd15be72d7::$classMap;
+>>>>>>> ba1735ec43ec0b73b128c725ed9cbb92f8ec83d0
 
         }, null, ClassLoader::class);
     }

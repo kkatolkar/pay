@@ -1,5 +1,8 @@
-@extends('layouts.app')
-@section('content')
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+@include('layouts.header')
+<body class="stretched">
 <section id="page-title">
             <div class="container clearfix">
                 <h1>Payment</h1>
@@ -24,13 +27,14 @@
                     <a href="{{url('/')}}" class="button button-center button-3d button-alpha-orange">Back</a>
                 </div>
             </form>
-        </div>
-        
+        </div> 
     </div>
 </section>
 <section id="payment_form">
     <div id="payment_form_Response"></div>
 </section>
+@include('layouts.footer')
+</div>
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>
@@ -40,7 +44,24 @@
     $(document).ready(function() {
         
         $("#redopayment").validate({
+<<<<<<< HEAD
+            rules: {
+                policy_number : {
+                    required: true,
+                },
+            },
+            messages : {
+                policy_number: {
+                    required: "Please enter policy number"
+                },
+            }
+        });
+
+        $('#submit').click(function (e) {
+            console.log('clicked');
+=======
             submitHandler: function(form) {
+>>>>>>> ba1735ec43ec0b73b128c725ed9cbb92f8ec83d0
             const policyNumber = $('#policy_number').val();
             const premium = $('#premium').val();
             $.ajax({
@@ -84,4 +105,4 @@
     });
 </script>
 </body>
-@endsection
+</html>
