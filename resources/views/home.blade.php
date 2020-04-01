@@ -58,7 +58,7 @@
 
         $('#submit').click(function (e) {
             console.log('clicked');
-            submitHandler: function(form) {
+          
                 const policyNumber = $('#policy_number').val();
                 const premium = $('#premium').val();
                 $.ajax({
@@ -91,10 +91,6 @@
 
                     }
                 });
-
-            }
-
-
         });
 
     });
