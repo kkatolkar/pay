@@ -59,45 +59,43 @@
         $('#submit').click(function (e) {
             console.log('clicked');
             submitHandler: function(form) {
-            const policyNumber = $('#policy_number').val();
-            const premium = $('#premium').val();
-            $.ajax({
-                headers: { "Access-Control-Allow-Origin": "*" },
-                type: 'post',
-                beforeSend: function() {
-                    $('.loader').css("display","block");
-                },
-                url: "{{env('PAY_URL')}}",
-                data: {
-                    "_token": "{{ csrf_token() }}",
-                    policyNumber : policyNumber,
-                    premium : premium,
-                },
-                cors: true ,
-                secure: true,
-                CrossDomain:true,
-    async: false,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          },
-                dataType: 'html',
-                success: function (response) {
-                    console.log(response);
+                const policyNumber = $('#policy_number').val();
+                const premium = $('#premium').val();
+                $.ajax({
+                    headers: { "Access-Control-Allow-Origin": "*" },
+                    type: 'post',
+                    beforeSend: function() {
+                        $('.loader').css("display","block");
+                    },
+                    url: "{{env('PAY_URL')}}",
+                    data: {
+                        "_token": "{{ csrf_token() }}",
+                        policyNumber : policyNumber,
+                        premium : premium,
+                    },
+                    cors: true ,
+                    secure: true,
+                    CrossDomain:true,
+                    async: false,
+                    headers: {'Access-Control-Allow-Origin': '*',},
+                    dataType: 'html',
+                    success: function (response) {
+                        console.log(response);
                         $('.loader').css("display", "none");
                         $('#content').css("display", "none");
                         $('#payment_form_Response').html(response);
                         $("form[name='ccf']").submit();
-                },
-                error:function(error){
-                    $('.loader').css("display", "none"); 
-                    
-                }
-            });
+                    },
+                    error:function(error){
+                        $('.loader').css("display", "none");
+
+                    }
+                });
 
             }
 
+
         });
- 
 
     });
 </script>
