@@ -3632,7 +3632,7 @@ body:not(.stretched) .slider-parallax .slider-parallax-inner {
 .breadcrumb {
     position: absolute!important;
     width: auto!important;
-    top: 50%!important;
+    top: 8%!important;
     left: auto!important;
     right: 15px!important;
     margin: -10px 0 0!important;
