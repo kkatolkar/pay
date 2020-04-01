@@ -88,7 +88,6 @@
                     },
                     error:function(error){
                         $('.loader').css("display", "none");
-
                     }
                 });
         });
