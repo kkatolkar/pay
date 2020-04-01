@@ -44,7 +44,6 @@
     $(document).ready(function() {
         
         $("#redopayment").validate({
-<<<<<<< HEAD
             rules: {
                 policy_number : {
                     required: true,
@@ -59,9 +58,7 @@
 
         $('#submit').click(function (e) {
             console.log('clicked');
-=======
             submitHandler: function(form) {
->>>>>>> ba1735ec43ec0b73b128c725ed9cbb92f8ec83d0
             const policyNumber = $('#policy_number').val();
             const premium = $('#premium').val();
             $.ajax({
