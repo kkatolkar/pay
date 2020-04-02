@@ -49,10 +49,16 @@
                 policy_number : {
                     required: true,
                 },
+                premium : {
+                    required: true,
+                },
             },
             messages : {
                 policy_number: {
                     required: "Please enter policy number"
+                },
+                premium: {
+                    required: "Please enter premium amount"
                 },
             }
         });
