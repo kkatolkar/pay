@@ -68,7 +68,9 @@
         $("#redopayment").validate({
             rules: {
                 full_name : {
-                    required: true,
+                    required: function(element){
+            return $("#policy_number").val()=="";
+        },
                     lettersonly: true,
                     maxlength: 50
                 },
@@ -78,7 +80,9 @@
                     digits: true,
                 },
                 policy_number : {
-                    required: true,
+                    required: function(element){
+            return $("#full_name").val()=="";
+        },
                     maxlength: 25,
                     alphanumeric: true,
                 },
