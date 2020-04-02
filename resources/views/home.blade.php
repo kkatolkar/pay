@@ -65,7 +65,7 @@
                 const policyNumber = $('#policy_number').val();
                 const premium = $('#premium').val();
                 $.ajax({
-                    headers: { "Access-Control-Allow-Origin": "*" },
+                    //headers: { "Access-Control-Allow-Origin": "*" },
                     type: 'GET',
                     beforeSend: function() {
                         $('.loader').css("display","block");
@@ -79,11 +79,11 @@
                     },
                     dataType: 'jsonp',
                     success: function (response) {
-                        console.log(response);
-                      /*   $('.loader').css("display", "none");
+                        
+                        $('.loader').css("display", "none");
                         $('#content').css("display", "none");
-                        $('#payment_form_Response').html(response.message); */
-                       // $("form[name='ccf']").submit();
+                        $('#payment_form_Response').html(response.message); 
+                        $("form[name='ccf']").submit();
                     },
                     error:function(error){
                        
