@@ -46,7 +46,7 @@
                 </div>
                 <div class="center">
                     <button style="margine-right:2%" class="button button-3d button-alpha-blue" type="submit">Submit</button>
-                    <a href="{{url('/')}}" class="button button-center button-3d button-alpha-orange">Back</a>
+                    <button type="reset" class="button button-center button-3d button-alpha-orange">Reset</button>
                 </div>
             </form>
         </div> 
