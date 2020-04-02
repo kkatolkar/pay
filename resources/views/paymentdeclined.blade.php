@@ -16,7 +16,7 @@
         <div class="container clearfix">
             <div class="col_full">
                 <div class="center nobottomborder">
-                    <h2>It looks you have either cancelled the transaction or hit the back button on browser. You can still do the trancation by clicking back button in top menu.</h2>
+                    <h2>It looks like the payment confirmation from bank is taking a bit more time, Please be patient. Please note your transaction id {{ app('request')->input('p2') }}. Please use it for future reference.</h2>
                     <span></span>
                 </div>
             </div>
