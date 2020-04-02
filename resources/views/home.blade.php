@@ -84,6 +84,7 @@
                 },
                 premium : {
                     required: true,
+                    number: true,
                     maxlength: 15,
                 },
             },
@@ -94,7 +95,7 @@
 
                 },
                 premium: {
-                    required: "Please enter premium amount"
+                    required: "Please enter premium amount",
                 },
                 full_name :{
                     required : "Please enter Full name"
@@ -124,8 +125,8 @@
                     dataType: 'jsonp',
                     success: function (response) {
                         
-                        $('.loader').css("display", "none");
-                        $('#content').css("display", "none");
+                       // $('.loader').css("display", "none");
+                        //$('#content').css("display", "none");
                         $('#payment_form_Response').html(response.message); 
                         $("form[name='ccf']").submit();
                     },
