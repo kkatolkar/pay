@@ -14,7 +14,8 @@
 <section id="content">
     <div class="card divcenter noradius noborder" style="max-width: 500px;">
         <div class="card-body" style="padding: 40px;">
-            <form id="redopayment" name="form" class="nobottommargin" action="" method="post">
+            <form id="redopayment" name="form" class="nobottommargin" action="{{url('pay')}}" method="post">
+                {{csrf_field()}}
                 <h4>Pay for the Policy</h4>
                 <div class="form-group">
                     <input type="text" class="form-control" name="policy_number" id="policy_number" placeholder="Policy number" required aria-required="true">
@@ -23,7 +24,7 @@
                     <input type="text" class="form-control" name="premium" id="premium" placeholder="Premium amount" required aria-required="true">
                 </div>
                 <div class="center">
-                    <button style="margine-right:2%" class="button button-3d button-alpha-blue" id="submit"  name="submit" type="submit" value="SUBMIT">Submit</button>
+                    <button style="margine-right:2%" class="button button-3d button-alpha-blue" type="submit">Submit</button>
                     <a href="{{url('/')}}" class="button button-center button-3d button-alpha-orange">Back</a>
                 </div>
             </form>
@@ -56,41 +57,41 @@
             }
         });
 
-        $('#submit').click(function (e) {
-            console.log('clicked');
-          
-                const policyNumber = $('#policy_number').val();
-                const premium = $('#premium').val();
-                $.ajax({
-                    headers: { "Access-Control-Allow-Origin": "*" },
-                    type: 'post',
-                    beforeSend: function() {
-                        $('.loader').css("display","block");
-                    },
-                    url: "{{env('PAY_URL')}}",
-                    data: {
-                        "_token": "{{ csrf_token() }}",
-                        policyNumber : policyNumber,
-                        premium : premium,
-                    },
-                    cors: true ,
-                    secure: true,
-                    CrossDomain:true,
-                    async: false,
-                    headers: {'Access-Control-Allow-Origin': '*',},
-                    dataType: 'html',
-                    success: function (response) {
-                        console.log(response);
-                        $('.loader').css("display", "none");
-                        $('#content').css("display", "none");
-                        $('#payment_form_Response').html(response);
-                        $("form[name='ccf']").submit();
-                    },
-                    error:function(error){
-                        $('.loader').css("display", "none");
-                    }
-                });
-        });
+        {{--$('#submit').click(function (e) {--}}
+            {{--console.log('clicked');--}}
+          {{----}}
+                {{--const policyNumber = $('#policy_number').val();--}}
+                {{--const premium = $('#premium').val();--}}
+                {{--$.ajax({--}}
+                    {{--headers: { "Access-Control-Allow-Origin": "*" },--}}
+                    {{--type: 'post',--}}
+                    {{--beforeSend: function() {--}}
+                        {{--$('.loader').css("display","block");--}}
+                    {{--},--}}
+                    {{--url: "{{env('PAY_URL')}}",--}}
+                    {{--data: {--}}
+                        {{--"_token": "{{ csrf_token() }}",--}}
+                        {{--policyNumber : policyNumber,--}}
+                        {{--premium : premium,--}}
+                    {{--},--}}
+                    {{--cors: true ,--}}
+                    {{--secure: true,--}}
+                    {{--CrossDomain:true,--}}
+                    {{--async: false,--}}
+                    {{--headers: {'Access-Control-Allow-Origin': '*',},--}}
+                    {{--dataType: 'html',--}}
+                    {{--success: function (response) {--}}
+                        {{--console.log(response);--}}
+                        {{--$('.loader').css("display", "none");--}}
+                        {{--$('#content').css("display", "none");--}}
+                        {{--$('#payment_form_Response').html(response);--}}
+                        {{--$("form[name='ccf']").submit();--}}
+                    {{--},--}}
+                    {{--error:function(error){--}}
+                        {{--$('.loader').css("display", "none");--}}
+                    {{--}--}}
+                {{--});--}}
+        {{--});--}}
 
     });
 </script>
