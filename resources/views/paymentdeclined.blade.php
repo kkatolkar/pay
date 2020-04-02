@@ -1,5 +1,7 @@
-@extends('layouts.app')
-@section('content')
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+
+@include('layouts.header')
 <body class="stretched">
 <section id="page-title">
             <div class="container clearfix">
@@ -20,6 +22,8 @@
             </div>
     </div>
 </section>
+@include('layouts.footer')
+</div>
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>
