@@ -25,11 +25,19 @@
 </section>
 <div class="loader"></div>
 <section id="content">
+
     <div class="card divcenter noradius noborder" style="max-width: 500px;">
+        <p>Pay for your insurance policy with the click of a button. Please use the form below to begin making your payment for your policy to Alpha Direct Insurance Company. If you don't know your policy number, please enter your FULL NAME in the policy number field.</p>
         <div class="card-body" style="padding: 40px;">
             <form id="redopayment" name="form" class="nobottommargin" action="{{url('pay')}}" method="post">
                 {{csrf_field()}}
-                <h4>Pay for the Policy</h4>
+                <h4>Policy Payment Screen</h4>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full name" required aria-required="true">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="cellphone" id="cellphone" placeholder="Cell phone" required aria-required="true">
+                </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="policy_number" id="policy_number" placeholder="Policy number" required aria-required="true">
                 </div>
@@ -59,20 +67,43 @@
         $('.loader').css("display", "none");
         $("#redopayment").validate({
             rules: {
+                full_name : {
+                    required: true,
+                    lettersonly: true,
+                    maxlength: 50
+                },
+                cellphone : {
+                    required: true,
+                    maxlength: 8,
+                    digits: true,
+                },
                 policy_number : {
                     required: true,
+                    maxlength: 25,
+                    alphanumeric: true,
                 },
                 premium : {
                     required: true,
+                    maxlength: 15,
                 },
             },
             messages : {
                 policy_number: {
-                    required: "Please enter policy number"
+                    required: "Please enter policy number",
+                    alphanumeric : "Please enter correct policy number"
+
                 },
                 premium: {
                     required: "Please enter premium amount"
                 },
+                full_name :{
+                    required : "Please enter Full name"
+                },
+                cellphone : {
+                    required : "Please enter your cellphone number without std code",
+                    maxlength: "Please enter your 8 digit cellphone number",
+                    digits: "Please enter your 8 digit cellphone number",
+                }
             },
             submitHandler: function(){ 
                 const policyNumber = $('#policy_number').val();
@@ -105,7 +136,9 @@
                 });
             }
         });
-       
+        jQuery.validator.addMethod("lettersonly", function(value, element) { 
+             return this.optional(element) || /^[a-z\s]+$/i.test(value);
+            }, "Please enter only letters"); 
 
     });
 </script>
