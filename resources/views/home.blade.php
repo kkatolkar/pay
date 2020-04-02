@@ -59,44 +59,39 @@
                 premium: {
                     required: "Please enter premium amount"
                 },
-            }
-        });
-
-        $('#submit').click(function (e) {
-            console.log('clicked');
-          
+            },
+            submitHandler: function(){ 
                 const policyNumber = $('#policy_number').val();
                 const premium = $('#premium').val();
                 $.ajax({
                     headers: { "Access-Control-Allow-Origin": "*" },
-                    type: 'post',
+                    type: 'GET',
                     beforeSend: function() {
                         $('.loader').css("display","block");
                     },
+                    jsonpCallback: 'callback',
                     url: "{{env('PAY_URL')}}",
                     data: {
                         "_token": "{{ csrf_token() }}",
                         policyNumber : policyNumber,
                         premium : premium,
                     },
-                    cors: true ,
-                    secure: true,
-                    CrossDomain:true,
-                    async: false,
-                    headers: {'Access-Control-Allow-Origin': '*',},
-                    dataType: 'html',
+                    dataType: 'jsonp',
                     success: function (response) {
                         console.log(response);
-                        $('.loader').css("display", "none");
+                      /*   $('.loader').css("display", "none");
                         $('#content').css("display", "none");
-                        $('#payment_form_Response').html(response);
-                        $("form[name='ccf']").submit();
+                        $('#payment_form_Response').html(response.message); */
+                       // $("form[name='ccf']").submit();
                     },
                     error:function(error){
+                       
                         $('.loader').css("display", "none");
                     }
                 });
+            }
         });
+       
 
     });
 </script>
