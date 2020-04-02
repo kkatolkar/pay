@@ -28,4 +28,4 @@
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>
 </body>
-@endsection
+ 
