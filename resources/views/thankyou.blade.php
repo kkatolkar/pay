@@ -1,4 +1,3 @@
-@extends('layouts.app')
 @section('content')
 <body class="stretched">
 <section id="page-title">
