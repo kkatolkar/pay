@@ -3,7 +3,7 @@
 
 @include('layouts.header')
 <style>
-    #load{
+    .loader{
         position: fixed;
         left: 0px;
         top: 0px;
@@ -23,7 +23,7 @@
                 </ol>
             </div>
 </section>
-<div id="load"></div>
+<div class="loader"></div>
 <section id="content">
     <div class="card divcenter noradius noborder" style="max-width: 500px;">
         <div class="card-body" style="padding: 40px;">
@@ -117,7 +117,7 @@
         } else if (state == 'complete') {
             setTimeout(function(){
                 document.getElementById('interactive');
-                document.getElementById('load').style.visibility="hidden";
+                document.getElementsByClassName('loader').style.visibility="hidden";
                 document.getElementById('contents').style.visibility="visible";
             },1000);
         }
