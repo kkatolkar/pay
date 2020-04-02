@@ -109,6 +109,8 @@
             submitHandler: function(){ 
                 const policyNumber = $('#policy_number').val();
                 const premium = $('#premium').val();
+                const cellphone = $('#cellphone').val();
+                const full_name = $('#full_name').val();
                 $.ajax({
                     //headers: { "Access-Control-Allow-Origin": "*" },
                     type: 'GET',
