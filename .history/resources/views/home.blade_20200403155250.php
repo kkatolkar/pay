@@ -33,16 +33,16 @@
                 {{csrf_field()}}
                 <h4>Policy Payment Screen</h4>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full name" >
+                    <input type="text" class="form-control" name="full_name" id="full_name" placeholder="Full name" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="cellphone" id="cellphone" placeholder="Cell phone" required aria-required="true">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" >
+                    <input type="text" class="form-control" name="email" id="email" placeholder="Email" required aria-required="true">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="policy_number" id="policy_number" placeholder="Policy number">
+                    <input type="text" class="form-control" name="policy_number" id="policy_number" placeholder="Policy number" required aria-required="true">
                 </div>
                 <div class="form-group">
                     <input type="text" class="form-control" name="premium" id="premium" placeholder="Premium amount" required aria-required="true">
@@ -83,8 +83,7 @@
                     digits: true,
                 },
                 email :{
-                    email: true,
-                    maxlength: 50
+                    email: true
                 },
 
                 policy_number : {
@@ -123,7 +122,6 @@
                 const premium = $('#premium').val();
                 const cellphone = $('#cellphone').val();
                 const full_name = $('#full_name').val();
-                const email = $('#email').val();
                 $.ajax({
                     //headers: { "Access-Control-Allow-Origin": "*" },
                     type: 'GET',
@@ -137,8 +135,7 @@
                         policyNumber : policyNumber,
                         premium : premium,
                         cellphone : cellphone,
-                        full_name : full_name,
-                        email : email
+                        full_name : full_name
                     },
                     dataType: 'jsonp',
                     success: function (response) {

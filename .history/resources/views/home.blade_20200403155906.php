@@ -137,8 +137,7 @@
                         policyNumber : policyNumber,
                         premium : premium,
                         cellphone : cellphone,
-                        full_name : full_name,
-                        email : email
+                        full_name : full_name
                     },
                     dataType: 'jsonp',
                     success: function (response) {

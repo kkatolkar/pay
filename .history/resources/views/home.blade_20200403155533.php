@@ -83,8 +83,7 @@
                     digits: true,
                 },
                 email :{
-                    email: true,
-                    maxlength: 50
+                    email: true
                 },
 
                 policy_number : {
@@ -123,7 +122,6 @@
                 const premium = $('#premium').val();
                 const cellphone = $('#cellphone').val();
                 const full_name = $('#full_name').val();
-                const email = $('#email').val();
                 $.ajax({
                     //headers: { "Access-Control-Allow-Origin": "*" },
                     type: 'GET',
@@ -137,8 +135,7 @@
                         policyNumber : policyNumber,
                         premium : premium,
                         cellphone : cellphone,
-                        full_name : full_name,
-                        email : email
+                        full_name : full_name
                     },
                     dataType: 'jsonp',
                     success: function (response) {
