@@ -53,7 +53,7 @@
                 </div>
             </form>
         </div> 
-        <p>Please email <a href="mailto:accounts@alphadirect.co.bw">accounts@alphadirect.co.bw</a> if you have any questions.</>
+        <p>Please email accounts@alphadirect.co.bw if you have any questions.</>
     </div>
 </section>
 <section id="payment_form">
