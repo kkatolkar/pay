@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6e41916-fb46-4a6c-b493-d631ca85a4e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.env" afterPath="$PROJECT_DIR$/.env" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/home.blade.php" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" />
-    </list>
+    <list default="true" id="b6e41916-fb46-4a6c-b493-d631ca85a4e9" name="Default" comment="" />
     <ignored path="pay.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
