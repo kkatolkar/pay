@@ -70,6 +70,10 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
 <script>
     $(document).ready(function() {
+
+        $(document).bind("contextmenu",function(e){
+            return false;     //disabled mouse right click
+        });
         $('.loader').css("display", "none");
         $("#redopayment").validate({
             rules: {
@@ -157,7 +161,7 @@
 
 
         var is_paymentProcess = '{{$is_paymentProcess}}';
-        var url = 'http://localhost/AlphaDirect/graphiteFinal/Development/public/api/get_payment_status_details';
+        var url = "{{env('POST_URL')}}";
         if(is_paymentProcess != null){
             $.ajax({
                 beforeSend: function() {
