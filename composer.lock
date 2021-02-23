@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "14492fca52082d4c21906a9ac58181cf",
+    "content-hash": "a4e766e6831a8d2c93a0ee8222bb64aa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3152,7 +3152,7 @@
                 "php": ">=7.1"
             },
             "suggest": {
-                "ext-iconv": "For best performance"
+                "ext-intl": "For best performance"
             },
             "type": "library",
             "extra": {
@@ -3166,10 +3166,13 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Polyfill\\Iconv\\": ""
+                    "Symfony\\Polyfill\\Intl\\Normalizer\\": ""
                 },
                 "files": [
                     "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3186,11 +3189,12 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony polyfill for the Iconv extension",
+            "description": "Symfony polyfill for intl's Normalizer class and related functions",
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
-                "iconv",
+                "intl",
+                "normalizer",
                 "polyfill",
                 "portable",
                 "shim"
@@ -3234,7 +3238,7 @@
                 "symfony/polyfill-php72": "^1.10"
             },
             "suggest": {
-                "ext-intl": "For best performance"
+                "ext-mbstring": "For best performance"
             },
             "type": "library",
             "extra": {
@@ -3248,7 +3252,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Polyfill\\Intl\\Idn\\": ""
+                    "Symfony\\Polyfill\\Mbstring\\": ""
                 },
                 "files": [
                     "bootstrap.php"
@@ -3260,8 +3264,8 @@
             ],
             "authors": [
                 {
-                    "name": "Laurent Bassin",
-                    "email": "laurent@bassin.info"
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
                 },
                 {
                     "name": "Trevor Rowbotham",
@@ -3272,12 +3276,11 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony polyfill for intl's idn_to_ascii and idn_to_utf8 functions",
+            "description": "Symfony polyfill for the Mbstring extension",
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
-                "idn",
-                "intl",
+                "mbstring",
                 "polyfill",
                 "portable",
                 "shim"
@@ -3417,7 +3420,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Polyfill\\Mbstring\\": ""
+                    "Symfony\\Polyfill\\Php72\\": ""
                 },
                 "files": [
                     "bootstrap.php"
@@ -3437,11 +3440,10 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony polyfill for the Mbstring extension",
+            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
-                "mbstring",
                 "polyfill",
                 "portable",
                 "shim"
@@ -3494,10 +3496,13 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Polyfill\\Php72\\": ""
+                    "Symfony\\Polyfill\\Php73\\": ""
                 },
                 "files": [
                     "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -3514,7 +3519,7 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony polyfill backporting some PHP 7.2+ features to lower PHP versions",
+            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
@@ -3570,7 +3575,7 @@
             },
             "autoload": {
                 "psr-4": {
-                    "Symfony\\Polyfill\\Php73\\": ""
+                    "Symfony\\Polyfill\\Php80\\": ""
                 },
                 "files": [
                     "bootstrap.php"
@@ -3585,6 +3590,10 @@
             ],
             "authors": [
                 {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
                     "name": "Nicolas Grekas",
                     "email": "p@tchwork.com"
                 },
@@ -3593,7 +3602,7 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony polyfill backporting some PHP 7.3+ features to lower PHP versions",
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
             "homepage": "https://symfony.com",
             "keywords": [
                 "compatibility",
@@ -4549,6 +4558,11 @@
                 "friendsofphp/php-cs-fixer": "^v2.15.8",
                 "phpunit/phpunit": "^9.3.11",
                 "vimeo/psalm": "^3.17.1"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.14",
+                "phpunit/phpunit": "^7.5|^8.0",
+                "vimeo/psalm": "^3.12"
             },
             "type": "library",
             "autoload": {

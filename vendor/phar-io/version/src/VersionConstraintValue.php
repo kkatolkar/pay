@@ -20,10 +20,7 @@ class VersionConstraintValue {
     /** @var string */
     private $versionString = '';
 
-    /**
-     * @param string $versionString
-     */
-    public function __construct($versionString) {
+    public function __construct(string $versionString) {
         $this->versionString = $versionString;
 
         $this->parseVersion($versionString);

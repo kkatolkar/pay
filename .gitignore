@@ -6,4 +6,4 @@
 vendor
 storage/*
 storage/logs/
- 
+node_modules

@@ -8,7 +8,6 @@ All notable changes to phar-io/version are documented in this file using the [Ke
 
 - [#22](https://github.com/phar-io/version/pull/22): make dev suffix rank works for uppercase too
 
-
 ## [3.0.3] - 30.11.2020
 
 ### Added
