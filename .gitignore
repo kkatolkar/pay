@@ -1,0 +1,9 @@
+.env
+.env
+.idea
+.webpack.mix
+.history
+
+storage/*
+storage/logs/
+
