@@ -11,9 +11,11 @@ namespace PharIo\Version;
 
 class VersionConstraintParser {
     /**
+     * @param string $value
+     *
      * @throws UnsupportedVersionConstraintException
      */
-    public function parse(string $value): VersionConstraint {
+    public function parse($value): VersionConstraint {
         if (\strpos($value, '||') !== false) {
             return $this->handleOrGroup($value);
         }
@@ -55,7 +57,10 @@ class VersionConstraintParser {
         return new ExactVersionConstraint($constraint->getVersionString());
     }
 
-    private function handleOrGroup(string $value): OrVersionConstraintGroup {
+    /**
+     * @param $value
+     */
+    private function handleOrGroup($value): OrVersionConstraintGroup {
         $constraints = [];
 
         foreach (\explode('||', $value) as $groupSegment) {
@@ -65,13 +70,11 @@ class VersionConstraintParser {
         return new OrVersionConstraintGroup($value, $constraints);
     }
 
-    private function handleTildeOperator(string $value): AndVersionConstraintGroup {
-        $constraintValue = new VersionConstraintValue(\substr($value, 1));
-
-        if ($constraintValue->getPatch()->isAny()) {
-            return $this->handleCaretOperator($value);
-        }
-
+    /**
+     * @param string $value
+     */
+    private function handleTildeOperator($value): AndVersionConstraintGroup {
+        $version     = new Version(\substr($value, 1));
         $constraints = [
             new GreaterThanOrEqualToVersionConstraint(
                 $value,
@@ -106,6 +109,15 @@ class VersionConstraintParser {
                 $constraintValue->getMajor()->getValue() ?? 0
             );
         }
+
+        return new AndVersionConstraintGroup($value, $constraints);
+    }
+
+    /**
+     * @param string $value
+     */
+    private function handleCaretOperator($value): AndVersionConstraintGroup {
+        $version = new Version(\substr($value, 1));
 
         return new AndVersionConstraintGroup(
             $value,
