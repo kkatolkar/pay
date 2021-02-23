@@ -3,7 +3,7 @@
 .idea
 .webpack.mix
 .history
-
+vendor
 storage/*
 storage/logs/
-
+ 
