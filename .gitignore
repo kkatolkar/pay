@@ -3,8 +3,11 @@
 .idea
 .webpack.mix
 .history
-
+vendor
 storage/*
 storage/logs/
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4f865c93f1f8271d8d8aecb9fe2705ccc8142980
